@@ -79,7 +79,7 @@ def plot_category_sales(df):
     # Tampilkan plot di Streamlit
     st.pyplot(fig2)
 
-all_df = pd.read_csv("main_data.csv")
+all_df = pd.read_csv("dashboard/main_data.csv")
 
 all_df['order_purchase_timestamp'] = pd.to_datetime(all_df['order_purchase_timestamp'])
 
