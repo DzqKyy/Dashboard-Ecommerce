@@ -195,16 +195,6 @@ st.plotly_chart(fig1)
 st.subheader("Distribution Product Category Name")
 plot_category_sales(all_df)
 
-# Geospatial Visualization
-st.subheader("Geospatial Analysis")
-
-# Map of orders based on geolocation
-fig3 = px.scatter_mapbox(all_df, lat="geolocation_lat", lon="geolocation_lng", 
-                        hover_name="customer_city", hover_data=["order_id"],
-                        color_discrete_sequence=["fuchsia"], zoom=3, height=500)
-fig3.update_layout(mapbox_style="open-street-map")
-st.plotly_chart(fig3)
-
 col1, col2 = st.columns(2)
 with col1:
     # Tampilkan hasil distribusi customer per negara bagian
@@ -267,3 +257,13 @@ fig2 = px.bar(
     text=review_score_counts.values 
 )
 st.plotly_chart(fig2)
+
+# Geospatial Visualization
+st.subheader("Geospatial Analysis")
+
+# Map of orders based on geolocation
+fig3 = px.scatter_mapbox(all_df, lat="geolocation_lat", lon="geolocation_lng", 
+                        hover_name="customer_city", hover_data=["order_id"],
+                        color_discrete_sequence=["fuchsia"], zoom=3, height=500)
+fig3.update_layout(mapbox_style="open-street-map")
+st.plotly_chart(fig3)
